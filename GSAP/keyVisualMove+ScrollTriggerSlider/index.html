@@ -4,7 +4,6 @@
         <title>KeyVisualMove + ScrollTriggerSlider</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -14,18 +13,21 @@
     <body>
         <div id="wrap">
             <div class="about">
-                <div class="about-section slide about-section--01" style="position: relative; overflow: hidden">
+                <div
+                    class="about-section slide about-section--01"
+                    style="position: relative; overflow: hidden"
+                >
                     <div id="moveBox">
                         <img src="./img/kv.png" alt="" class="" />
                     </div>
                     SECTION 1
                 </div>
                 <script>
-                    var moveBox = $('#moveBox');
+                    var moveBox = $("#moveBox");
 
                     function mainMove(e) {
                         $(moveBox).css({
-                            transition: '1.5s ease-out',
+                            transition: "1.5s ease-out",
                         });
                         $(moveBox).parent().scrollTop(0);
                         $(moveBox).parent().scrollLeft(0);
@@ -46,7 +48,7 @@
                             x: movePositionX,
                             y: movePositionY,
                             duration: 0.3,
-                            ease: 'power3.out',
+                            ease: "power3.out",
                         });
                     }
 
@@ -62,11 +64,11 @@
                         var xpos = e.pageX - obj_left;
 
                         if (xpos < halfSize) {
-                            e.currentTarget.classList.remove('mouse-right');
-                            e.currentTarget.classList.add('mouse-left');
+                            e.currentTarget.classList.remove("mouse-right");
+                            e.currentTarget.classList.add("mouse-left");
                         } else {
-                            e.currentTarget.classList.remove('mouse-left');
-                            e.currentTarget.classList.add('mouse-right');
+                            e.currentTarget.classList.remove("mouse-left");
+                            e.currentTarget.classList.add("mouse-right");
                         }
                     }
 
@@ -88,11 +90,11 @@
                             });
                         }
 
-                        centerMoveBox('none'); // 페이지 로드 시 중앙으로 이동
+                        centerMoveBox("none"); // 페이지 로드 시 중앙으로 이동
 
-                        $('.about-section--01').each(function () {
+                        $(".about-section--01").each(function () {
                             this.addEventListener(
-                                'mousemove',
+                                "mousemove",
                                 function (e) {
                                     mainMove(e);
                                     findObjCoords(e);
@@ -102,40 +104,140 @@
                         });
 
                         $(window).resize(function () {
-                            centerMoveBox('1.5s ease-out');
+                            centerMoveBox("1.5s ease-out");
                         });
                     });
                 </script>
-                <div class="about-section slide about-section--02">SECTION 2</div>
-                <div class="about-section slide about-section--03">SECTION 3</div>
-                <div class="about-section slide about-section--04">
-                    <div class="box1" style="height: 300vh; background-color: rosybrown"></div>
+                <div class="about-section slide about-section--02">
+                    SECTION 2
+                </div>
+                <div class="about-section slide about-section--03">
+                    SECTION 3
+                </div>
+                <div
+                    class="about-section slide about-section--04"
+                    style="background-color: #e8e8e8"
+                >
+                    <div
+                        class="box1"
+                        style="height: 300vh; background-color: rosybrown"
+                    ></div>
                     SECTION 4
                 </div>
                 <div class="about-section about-section--05">
-                    SECTION 5
                     <div class="box2">
                         <div class="box2__inner">
                             <div class="prdslider">
                                 <ul>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
-                                    <li><div style="width: 400px; height: 500px; background-color: gray"></div></li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            style="
+                                                width: 400px;
+                                                height: 500px;
+                                                background-color: gray;
+                                            "
+                                        ></div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-section about-section--06">
-                    <div class="box3" style="height: 300vh; background-color: rosybrown"></div>
+                    <div
+                        class="box3"
+                        style="height: 300vh; background-color: rosybrown"
+                    ></div>
                     SECTION 6
                 </div>
             </div>
@@ -143,90 +245,169 @@
         <script>
             $(function () {
                 let isScrolling = false;
-                const sections = gsap.utils.toArray('.about-section.slide');
+                const sections = gsap.utils.toArray(".slide");
                 let currentSectionIndex = 0;
-                let scrollPrevented = true;
+                let isManualScrollAllowed = false;
 
-                function preventScrollInSections(e) {
-                    if (scrollPrevented) {
-                        e.preventDefault();
+                // Function to navigate to a specific section
+                function goToSection(index) {
+                    if (isScrolling || index < 0 || index >= sections.length)
+                        return;
+
+                    isScrolling = true;
+                    gsap.to(window, {
+                        scrollTo: { y: sections[index], autoKill: false },
+                        duration: 1,
+                        ease: "expo.inOut",
+                        onComplete: () => {
+                            currentSectionIndex = index;
+                            isScrolling = false;
+                            toggleManualScroll(index);
+                        },
+                    });
+                }
+
+                // Toggle manual scrolling based on section index
+                function toggleManualScroll(index) {
+                    if (index >= 3) {
+                        isManualScrollAllowed = true;
+                        document.body.style.overflow = ""; // Enable scrolling
+                    } else {
+                        isManualScrollAllowed = false;
+                        document.body.style.overflow = "hidden"; // Disable scrolling
                     }
                 }
 
-                function goToSection(i) {
-                    if (isScrolling || i < 0 || i >= sections.length) return;
+                // Handle wheel events for navigation
+                function onWheelEvent(e) {
+                    if (isScrolling) {
+                        e.preventDefault();
+                        return;
+                    }
 
-                    isScrolling = true;
+                    const delta = e.deltaY;
+                    const nextSectionIndex =
+                        delta > 0
+                            ? currentSectionIndex + 1
+                            : currentSectionIndex - 1;
 
-                    gsap.to(window, {
-                        scrollTo: { y: sections[i].offsetTop, autoKill: false },
-                        duration: 1,
-                        ease: 'expo.inOut',
-                        onComplete: () => {
-                            isScrolling = false;
+                    if (
+                        delta < 0 &&
+                        currentSectionIndex >= sections.length &&
+                        window.pageYOffset <
+                            sections[sections.length + 1].offsetTop
+                    ) {
+                        e.preventDefault();
+                        goToSection(sections.length - 1);
+                    } else if (
+                        delta < 0 &&
+                        currentSectionIndex === sections.length
+                    ) {
+                        e.preventDefault();
+                        goToSection(sections.length - 1);
+                    } else if (
+                        delta < 0 &&
+                        currentSectionIndex === sections.length - 1 &&
+                        window.pageYOffset <=
+                            sections[sections.length - 1].offsetTop
+                    ) {
+                        e.preventDefault();
+                        goToSection(2);
+                    } else if (
+                        !isManualScrollAllowed &&
+                        nextSectionIndex >= 0 &&
+                        nextSectionIndex < sections.length
+                    ) {
+                        e.preventDefault();
+                        goToSection(nextSectionIndex);
+                    }
+                }
+
+                // Update the current section index based on scroll position
+                function updateCurrentSectionIndex() {
+                    sections.forEach((panel, i) => {
+                        if (window.pageYOffset >= panel.offsetTop) {
                             currentSectionIndex = i;
-
-                            // 스크롤 방지 상태 업데이트
-                            if (currentSectionIndex < sections.length - 1) {
-                                scrollPrevented = true; // 마지막 섹션이 아닐 경우 스크롤 방지
-                            } else {
-                                scrollPrevented = false; // 마지막 섹션일 경우 스크롤 방지 해제
-                                document.body.style.overflow = '';
-
-                                // 슬라이드 클래스만 가진 ScrollTrigger 해제
-                                ScrollTrigger.getAll().forEach((trigger) => {
-                                    if ($(trigger.trigger).hasClass('slide')) {
-                                        trigger.kill();
-                                    }
-                                });
-                            }
-                        },
+                        }
                     });
                 }
 
-                window.addEventListener(
-                    'wheel',
-                    (e) => {
-                        preventScrollInSections(e);
-                        if (isScrolling) return;
-                        const delta = e.deltaY;
-                        console.log(delta < 0 && currentSectionIndex <= sections.length - 1 && window.pageYOffset <= sections[sections.length - 1].offsetTop);
-                        if (delta > 0 && currentSectionIndex < sections.length - 1) {
-                            goToSection(currentSectionIndex + 1);
-                        } else if (delta < 0 && currentSectionIndex === sections.length - 1 && window.pageYOffset <= sections[sections.length - 1].offsetTop && window.pageYOffset < sections[sections.length - 1].offsetTop + sections[sections.length - 1].offsetHeight) {
-                            // 여기
-                            scrollPrevented = true;
-                            goToSection(sections.length - 1);
-                        } else if (delta < 0 && currentSectionIndex <= sections.length - 1 && window.pageYOffset <= sections[sections.length - 1].offsetTop) {
-                            console.log('here');
-                            console.log(currentSectionIndex);
-                            goToSection(currentSectionIndex - 1);
-                        }
-                    },
-                    { passive: false }
-                );
+                // Set the initial section index when the page loads
+                function setInitialSectionIndex() {
+                    updateCurrentSectionIndex();
+                }
 
-                currentSectionIndex = sections.findIndex((section) => {
-                    return window.scrollY >= section.offsetTop && window.scrollY < section.offsetTop + section.offsetHeight;
+                // Event listeners
+                window.addEventListener("wheel", onWheelEvent, {
+                    passive: false,
                 });
+                window.addEventListener("scroll", updateCurrentSectionIndex);
 
-                document.body.style.overflow = 'hidden';
+                window.addEventListener("resize", onWheelEvent);
 
-                gsap.utils.toArray('.about-section.slide').forEach((panel, i) => {
+                // Initialize the section index on page load
+                setInitialSectionIndex();
+
+                // Create ScrollTriggers for each section
+                sections.forEach((panel, i) => {
                     ScrollTrigger.create({
                         trigger: panel,
-                        start: 'top top',
-                        end: 'bottom top',
+                        start: "top top",
+                        end: "bottom top",
                         onEnter: () => {
-                            console.log(`섹션 ${i + 1} 진입`);
-                            goToSection(i);
+                            currentSectionIndex = i;
                         },
-                        onEnterBack: () => {
-                            console.log(`섹션 ${i} 후진`);
-                            goToSection(i - 1);
-                        },
-                        markers: true,
                     });
+                });
+
+                // Specific ScrollTrigger for section transition from section 4 to 3
+                ScrollTrigger.create({
+                    trigger: sections[sections.length - 1],
+                    start: "top top",
+                    onLeaveBack: () => {
+                        goToSection(sections.length - 2);
+                    },
+                });
+
+                let cards = gsap.utils.toArray(".prdslider ul li");
+                let cardsWidth = 0;
+
+                function calcCardsWidth() {
+                    cards.forEach((item) => {
+                        cardsWidth += $(item).outerWidth(true);
+                    });
+                }
+                calcCardsWidth();
+
+                if (cardsWidth > $(".prdslider").innerWidth()) {
+                    let timeline = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".about-section--05",
+                            start: "center center",
+                            pin: true,
+                            scrub: 1,
+                            end: () =>
+                                "+=" +
+                                (cardsWidth -
+                                    $(".prdslider").outerWidth(true)) +
+                                "px",
+                            invalidateOnRefresh: true,
+                            markers: true,
+                        },
+                    });
+
+                    timeline.to(cards, {
+                        x: () =>
+                            -(cardsWidth - $(".prdslider").outerWidth(true)) -
+                            80 +
+                            "px",
+                        ease: "none",
+                    });
+                }
+
+                ScrollTrigger.addEventListener("refreshInit", function () {
+                    cardsWidth = 0;
+                    calcCardsWidth();
                 });
             });
         </script>
@@ -242,8 +423,8 @@
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
-                mask-image: url('../images/main/text-image.png');
-                -webkit-mask-image: url('../images/main/text-image.png');
+                mask-image: url("../images/main/text-image.png");
+                -webkit-mask-image: url("../images/main/text-image.png");
                 mask-repeat: no-repeat;
                 mask-position: center;
                 mask-size: contain;
@@ -277,6 +458,15 @@
                 position: relative;
                 height: 100vh;
             }
+            .about-section--05 {
+                position: relative;
+                display: block;
+            }
+            .prdslider {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
             #moveBox {
                 position: absolute;
                 top: 0;
@@ -288,7 +478,7 @@
                 padding: 40px;
             }
             #moveBox::after {
-                content: '';
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -303,7 +493,7 @@
             .box2__inner {
                 position: relative;
                 height: 100vh;
-                padding: 120px 0;
+                padding: 120px 40px;
             }
             .box2 ul {
                 position: absolute;
